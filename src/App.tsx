@@ -1,15 +1,6 @@
 import {Component, createEffect, createSignal} from 'solid-js';
-import {HelloWorld} from './HelloWorld'
 
-const [count, setCount] = createSignal(0)
-
-console.log(count())
-
-createEffect(() => {
-    console.log(count())
-  })
-
-setCount(count() + 1)
+import styles from './App.module.css'
 
 const App: Component = () => {
   const [color1, setColor1] = createSignal('#fff')
@@ -30,9 +21,14 @@ const App: Component = () => {
           <input type="color" name="" onChange={onColor1} />
         </div>
 
-        <div class="result-wrapper">
+        <div class={styles.result_wrapper}>
           <h2>Result</h2>
-          <div class="result"></div>
+          <div 
+          class={styles.result} 
+          style={{
+              'background-color': `color-mix(in srgb, ${color1()}, ${color2()})`
+            }}></div>
+
         </div>
 
         <div>
@@ -41,8 +37,6 @@ const App: Component = () => {
         </div>
 
       </main>
-      <h1>Welcome</h1>
-      <HelloWorld />
     </div>
   );
 };
