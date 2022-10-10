@@ -15,6 +15,10 @@ main {
 	margin-top: 0
 }
 
+label {
+  display: block;
+}
+
 :root{
   --color-1: #fff;
   --color-2: #fff;
@@ -25,4 +29,31 @@ main {
 	border-radius: 12px;
   border: 1px dotted #ccc;
 	/* background-color: color-mix(in srgb, var(--color-1), var(--color-2)) */
+}
+
+.kities {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(6, 14vw);
+  grid-gap: 1vw
+}
+
+.kitty1 {
+  grid-column: 6/7;
+  grid-row: 2/3;
+  transform: rotate(35deg)
+}
+
+.kitty2 {
+  transform: rotate(-35deg)
+}
+
+.kitty3 {
+  grid-column: 5/6;
+  transform: scale(0.7)
+}
+
+.kities li {
+  list-style: none
+
 }

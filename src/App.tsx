@@ -1,4 +1,7 @@
 import {Component, createEffect, createSignal} from 'solid-js';
+import kitty from './assets/1.svg'
+import kitty2 from './assets/4.svg'
+import kitty3 from './assets/8.svg'
 
 import styles from './App.module.css'
 
@@ -17,7 +20,7 @@ const App: Component = () => {
       <main class="grid">
 
         <div>
-          <label for="color1">Choose First Color {color1}</label>
+          <label for="color1">Choose First Color</label>
           <input type="color" name="" onChange={onColor1} />
         </div>
 
@@ -32,11 +35,17 @@ const App: Component = () => {
         </div>
 
         <div>
-          <label for="color2">Choose Second Color {color2}</label>
+          <label for="color2">Choose Second Color</label>
           <input type="color" name="" onChange={onColor2}/>
         </div>
 
       </main>
+
+      <ul class={styles.kities}>
+        <li class={styles.kitty1}><img src={kitty} alt="" /></li>
+        <li class={styles.kitty2}><img src={kitty2} alt="" /></li>
+        <li class={styles.kitty3}><img src={kitty3} alt="" /></li>
+      </ul>
     </div>
   );
 };
